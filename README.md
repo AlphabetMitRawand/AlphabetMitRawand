@@ -2,7 +2,7 @@
   <img src="./images/icon.png" alt="Alphabet Mit Rawand" width="80" height="80"/>
 </p>
 
-<h2 align="center"><b>Alphabet Mit Rawand (Web)</b></h2>
+<h2 align="center"><b>Alphabet Mit Rawand</b></h2>
 <p align="center">
  ...
 <p><br>
@@ -11,36 +11,36 @@
 <!-- Platforms support -->
 <img alt="Platforms support" src="https://img.shields.io/badge/platform-Android%20%7C%20IOS%20%7C%20Web-App">
 <!-- Language support -->
-<img alt="Language support" src="https://img.shields.io/github/languages/top/Alphabet-mit-Rawand/alphabet-mit-rawand?color=skyblue&logo=language%20support&logoColor=blue">
+<img alt="Language support" src="https://img.shields.io/github/languages/top/AlphabetMitRawand/alphabetmitrawand?color=skyblue&logo=language%20support&logoColor=blue">
 <!-- Latest release -->
-<img src="https://img.shields.io/github/v/release/Alphabet-mit-Rawand/alphabet-mit-rawand?include_prereleases&amp;label=latest%20release" alt="Latest release">
+<img src="https://img.shields.io/github/v/release/AlphabetMitRawand/alphabetmitrawand?include_prereleases&amp;label=latest%20release" alt="Latest release">
 <!-- Build and test -->
-<img src="https://github.com/Alphabet-mit-Rawand/alphabet-mit-rawand/actions/workflows/build.yml/badge.svg" alt="Builds and tests">
+<img src="https://github.com/AlphabetMitRawandalphabetmitrawand/actions/workflows/build.yml/badge.svg" alt="Builds and tests">
 <!-- License -->
 <img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License">
 </p>
 <p align="center">
-  <a href="https://github.com/Alphabet-mit-Rawand/alphabet-mit-rawand/issues">Report a bug</a> &nbsp; &#8226; &nbsp;
-  <a href="https://github.com/Alphabet-mit-Rawand/alphabet-mit-rawand/issues">ڕاپۆرتی هەڵەیەک بکە</a>
+  <a href="https://github.com/AlphabetMitRawand/alphabetmitrawand/issues">Report a bug</a> &nbsp; &#8226; &nbsp;
+  <a href="https://github.com/AlphabetMitRawand/alphabetmitrawand/issues">ڕاپۆرتی هەڵەیەک بکە</a>
 </p>
 
 
 ## Features
 
-- [x] ...
-- [x] `...` ... `...` ...
+- [x] Reading
+- [x] Listening comprehension
+- [x] Learn words and sentences
+- [x] Grammar
 - [ ] ...
-    - [x] ...
-    - [ ] ...
 
 
 ## تایبتمەندیەکان
 
-- [x] ...
-- [x] `...` ... `...` ...
+- [x] خوێندنەوە
+- [x] تێگەیشتن لە گوێگرتن
+- [x] فێربوونی وشە و ڕستە
+- [x] ڕێزمان
 - [ ] ...
-    - [x] ...
-    - [ ] ...
 
 
 ## Installation
