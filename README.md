@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="./images/icon.png" alt="Alphabet Mit Rawand" width="80" height="80"/>
+  <img src="./assets/images/logo.png" alt="Alphabet Mit Rawand" width="80" height="80"/>
 </p>
 
-<h2 align="center"><b>Alphabet Mit Rawand</b></h2>
+<h2 align="center"><b>AlphabetMitRawand</b></h2>
 <p align="center">
- ...
+ AlphabetMitRawand is a mobile app and web-app to learn German in the best and easy way <br> ئەلفوبێ لەگەڵ ڕەوەند ئەپێکی مۆبایل و وێب-ئەپێکە بۆ فێربوونی زمانی ئەڵمانی بە باشترین و ئاسان
 <p><br>
 
 <p align="center">
@@ -14,8 +14,6 @@
 <img alt="Language support" src="https://img.shields.io/github/languages/top/AlphabetMitRawand/alphabetmitrawand?color=skyblue&logo=language%20support&logoColor=blue">
 <!-- Latest release -->
 <img src="https://img.shields.io/github/v/release/AlphabetMitRawand/alphabetmitrawand?include_prereleases&amp;label=latest%20release" alt="Latest release">
-<!-- Build and test -->
-<img src="https://github.com/AlphabetMitRawandalphabetmitrawand/actions/workflows/build.yml/badge.svg" alt="Builds and tests">
 <!-- License -->
 <img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License">
 </p>
@@ -42,7 +40,6 @@
 - [x] ڕێزمان
 - [ ] ...
 
-
 ## Installation
 
 <ol>
@@ -67,7 +64,8 @@
 
 ## Limitations
 
-- ...
+- This app is free and should not be resold under any circumstances
+- No one is allowed to copy the code of this app without entering the app name or developer name
 - ...
 
 The app is still being developed actively. It's in beta stage and may not be stable. if you have any
@@ -76,7 +74,8 @@ issues using the app, please let us know.
 
 ## سنووردارکردنەکان
 
-- ...
+- ئەم ئەپە بەخۆڕاییە و نابێت لە هیچ بارودۆخێکدا دووبارە بفرۆشرێتەوە
+- هیچ کەسێک بۆی نییە کۆدی ئەم ئەپە کۆپی بکات بەبێ دانانی ناوی ئەپ یان ناوی گەشەپێدەر
 - ...
 
 هێشتا ئەپەکە چالاکانە پەرەی پێدەدرێت. لە قۆناغی بێتادایە و لەوانەیە جێگیر نەبێت. ئەگەر هەتبێت
