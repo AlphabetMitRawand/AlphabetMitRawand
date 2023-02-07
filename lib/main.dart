@@ -14,35 +14,26 @@ class AlphabetMitRawand extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: MaterialApp(
-        theme: ThemeData(
-          useMaterial3: true,
-          fontFamily: 'NotoSansKurdish',
-          primarySwatch: Colors.blue,
-          colorScheme: ColorScheme.fromSwatch().copyWith(
-            secondary: Colors.transparent,
-          ),
-          splashColor: Colors.transparent,
-          highlightColor: Colors.transparent,
-          appBarTheme: const AppBarTheme(
-            iconTheme: IconThemeData(
-              color: Color(0xFF343a40),
-            ),
-            color: Colors.white,
-            foregroundColor: Colors.white,
-
-            // systemOverlayStyle: SystemUiOverlayStyle(
-            //   statusBarColor: Colors.transparent,
-            //   statusBarIconBrightness: Brightness.dark,
-            //   statusBarBrightness: Brightness.dark,
-            // ),
-          ),
+    return MaterialApp(
+      theme: ThemeData(
+        useMaterial3: true,
+        fontFamily: 'NotoSansKurdish',
+        primarySwatch: Colors.red,
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          secondary: Colors.transparent,
         ),
-        debugShowCheckedModeBanner: false,
-        home: const LoadingScreen(),
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
+        appBarTheme: const AppBarTheme(
+          iconTheme: IconThemeData(
+            color: Color(0xFF343a40),
+          ),
+          color: Colors.white,
+          foregroundColor: Colors.white,
+        ),
       ),
+      debugShowCheckedModeBanner: false,
+      home: const LoadingScreen(),
     );
   }
 }
