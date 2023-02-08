@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -27,7 +28,7 @@
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" href="favicon.png" />
 
   <title>alphabetmitrawand</title>
   <link rel="manifest" href="manifest.json">
@@ -39,16 +40,35 @@
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
 </head>
+
 <body>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+  <!-- Firebase Configuration -->
   <script>
-    window.addEventListener('load', function(ev) {
+    var firebaseConfig = {
+      apiKey: "AIzaSyAf2DV_uHq6lGbP8hl_XNVyRdPcc1f65Ss",
+      authDomain: "alphabet-mit-rawand.firebaseapp.com",
+      databaseURL: "https://alphabet-mit-rawand.firebaseio.com",
+      projectId: "alphabet-mit-rawand",
+      storageBucket: "alphabet-mit-rawand.appspot.com",
+      messagingSenderId: "422185554814",
+      appId: "1:422185554814:web:9ff76a73b63ca82653592f",
+      measurementId: "G-JYTJ7P64W1"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script>
+    window.addEventListener('load', function (ev) {
       // Download main.dart.js
       _flutter.loader.loadEntrypoint({
         serviceWorker: {
           serviceWorkerVersion: serviceWorkerVersion,
         },
-        onEntrypointLoaded: function(engineInitializer) {
-          engineInitializer.initializeEngine().then(function(appRunner) {
+        onEntrypointLoaded: function (engineInitializer) {
+          engineInitializer.initializeEngine().then(function (appRunner) {
             appRunner.runApp();
           });
         }
@@ -56,4 +76,5 @@
     });
   </script>
 </body>
+
 </html>

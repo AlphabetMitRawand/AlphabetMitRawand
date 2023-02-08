@@ -96,7 +96,7 @@ class _SettingScreenState extends State<SettingScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Image.asset(
-                            'assets/images/rawand.png',
+                            'assets/images/logo/rawand.png',
                             width: 80.0,
                           ),
                           Column(

@@ -85,29 +85,17 @@ class _LoadingScreenState extends State<LoadingScreen> {
             }
           });
         } else {
-          if (!mounted) return;
-          Timer(const Duration(seconds: 6), () {
-            if (launchTimeOnboarding == 0) {
-              if (!mounted) return;
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (BuildContext context) {
-                return const OnBoardingScreen();
-              }));
-            } else {
-              if (!mounted) return;
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (BuildContext context) {
-                return const HomeScreen();
-              }));
-            }
-          });
+          Navigator.push(context,
+              MaterialPageRoute(builder: (BuildContext context) {
+            return const HomeScreen();
+          }));
         }
       });
     } else {
       if (!mounted) return;
       Navigator.push(context,
           MaterialPageRoute(builder: (BuildContext context) {
-        return const HomeScreen();
+        return const DesktopNotSupported();
       }));
     }
   }
@@ -129,7 +117,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
             offset: const Offset(0, 0),
             scale: 1,
             image: Image.asset(
-              'assets/images/logos/icon.png',
+              'assets/images/logo/icon.png',
               width: 140.0,
               height: 140.0,
             ),

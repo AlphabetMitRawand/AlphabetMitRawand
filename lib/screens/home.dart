@@ -1,4 +1,5 @@
 import 'setting.dart';
+import 'random_words.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 // import 'package:url_launcher/url_launcher.dart';
@@ -36,33 +37,29 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ],
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(6.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                title,
-                style: TextStyle(
-                  color: clrText,
-                  fontSize: 20.0,
-                  height: 1.0,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              title,
+              style: TextStyle(
+                color: clrText,
+                fontSize: 20.0,
+              ),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Image.asset(
+                  image,
+                  width: 90.0,
+                  height: 90.0,
                 ),
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Image.asset(
-                    image,
-                    width: 90.0,
-                    height: 90.0,
-                  ),
-                ],
-              ),
-            ],
-          ),
+              ],
+            ),
+          ],
         ),
       );
 
@@ -156,12 +153,13 @@ class _HomeScreenState extends State<HomeScreen> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 InkWell(
-                  splashColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onTap: () {},
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const RandomWordsScreen())),
                   child: Container(
-                    padding: const EdgeInsets.all(10.0),
-                    height: 130.0,
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    height: 126.0,
                     decoration: const BoxDecoration(
                       color: Color(0xFFC1E4FF),
                       borderRadius: BorderRadius.all(
@@ -177,21 +175,19 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                     child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: const [
                             SizedBox(
-                              height: 16.0,
+                              height: 24.0,
                             ),
                             Text(
                               'دەتەوێت وشەی نوێ فێر ببیت؟',
                               style: TextStyle(
                                 color: Color(0xFF1864ab),
                                 fontSize: 18.0,
-                                height: 1.0,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
@@ -214,13 +210,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.symmetric(vertical: 15.0),
+                  margin: const EdgeInsets.symmetric(vertical: 16.0),
                   child: const Text(
                     'بەشەکان',
                     style: TextStyle(
                       fontSize: 18.0,
-                      height: 1.1,
-                      color: Color(0xFF343a40),
+                      color: Color(0xFF212529),
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -230,10 +225,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     physics: const BouncingScrollPhysics(),
                     gridDelegate:
                         const SliverGridDelegateWithMaxCrossAxisExtent(
-                      maxCrossAxisExtent: 200.0,
+                      maxCrossAxisExtent: 160.0,
                       childAspectRatio: 2 / 2,
-                      crossAxisSpacing: 15.0,
-                      mainAxisSpacing: 15.0,
+                      crossAxisSpacing: 16.0,
+                      mainAxisSpacing: 16.0,
                     ),
                     children: [
                       InkWell(
