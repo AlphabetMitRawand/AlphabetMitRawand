@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="./assets/images/logo.png" alt="Alphabet Mit Rawand" width="80" height="80"/>
+  <img src="./assets/images/logo/logo_line.png" alt="AlphabetMitRawand" width="100" height="100"/>
 </p>
 
 <h2 align="center"><b>AlphabetMitRawand</b></h2>
 <p align="center">
- AlphabetMitRawand is a mobile app and web-app to learn German in the best and easy way <br> ئەلفوبێ لەگەڵ ڕەوەند ئەپێکی مۆبایل و وێب-ئەپێکە بۆ فێربوونی زمانی ئەڵمانی بە باشترین و ئاسان
+ AlphabetMitRawand is a mobile app and web-app to learn German in the best and easy way <br> ئەلفوبێ لەگەڵ ڕەوەند ئەپێکی مۆبایل و وێب-ئەپێکە بۆ فێربوونی زمانی ئەڵمانی بە باشترین و ئاسانترین رێگا
 <p><br>
 
 <p align="center">
@@ -19,7 +19,7 @@
 </p>
 <p align="center">
   <a href="https://github.com/AlphabetMitRawand/alphabetmitrawand/issues">Report a bug</a> &nbsp; &#8226; &nbsp;
-  <a href="https://github.com/AlphabetMitRawand/alphabetmitrawand/issues">ڕاپۆرتی هەڵەیەک بکە</a>
+  <a href="https://github.com/AlphabetMitRawand/alphabetmitrawand/issues">ڕیپۆرتی هەڵەیەک بکە</a>
 </p>
 
 
@@ -43,22 +43,20 @@
 ## Installation
 
 <ol>
-  <li>...</li>
-  <li>...</li>
-  <li>...</li>
-  <li>...</li>
-  <li>...</li>
+  <li>Open this <a href="https://github.com/AlphabetMitRawand/AlphabetMitRawand/releases">link</a></li>
+  <li>Then click on `android.apk` to download for Android 5+</li>
+  <li>For iPhone click on <a href="https://alphabetmitrawand.web.app">here</a>, because it this Web-App (working offline if you install WebApp)</li>
+  <li>And for web click on <a href="https://alphabetmitrawand.web.app">here</a> (working offline if you install as WebApp)</li>
 </ol>
 
 
 ## فێرکاری دابەزاندنی ئەپەکە
 
 <ol>
-  <li>...</li>
-  <li>...</li>
-  <li>...</li>
-  <li>...</li>
-  <li>...</li>
+  <li>ئەم <a href="https://github.com/AlphabetMitRawand/AlphabetMitRawand/releases">لینکە</a> بکەرەوە</li>
+  <li>دواتر کلیک لە فایلی `android.apk` بۆ ئەندرۆید 5+</li>
+  <li>بۆ ئای ئۆ ئێی(ios) <a href="https://alphabetmitrawand.web.app">لێرەدا</a> بیکەرەوە (ئۆفلاین کاردەکات ئەگەر دابەزاندن کرد)</li>
+  <li>بۆ وێب <a href="https://alphabetmitrawand.web.app">لێرەدا</a> بیکەرەوە (ئۆفلاین کاردەکات ئەگەر دابەزاندن کرد)</li>
 </ol>
 
 
