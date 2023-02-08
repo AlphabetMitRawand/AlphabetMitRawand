@@ -42,7 +42,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
               if (!mounted) return;
               Navigator.push(context,
                   MaterialPageRoute(builder: (BuildContext context) {
-                return const HomeScreen();
+                return const OnBoardingScreen();
               }));
             }
           });
@@ -129,9 +129,9 @@ class _LoadingScreenState extends State<LoadingScreen> {
             offset: const Offset(0, 0),
             scale: 1,
             image: Image.asset(
-              'assets/images/logos/logo.png',
-              width: 120.0,
-              height: 120.0,
+              'assets/images/logos/icon.png',
+              width: 140.0,
+              height: 140.0,
             ),
           ),
         ),
