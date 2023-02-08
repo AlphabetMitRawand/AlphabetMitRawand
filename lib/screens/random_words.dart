@@ -3,8 +3,7 @@ import '../service/words_de.dart';
 import '../service/words_krd.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class RandomWordsScreen extends StatefulWidget {
   const RandomWordsScreen({super.key});
@@ -53,13 +52,24 @@ class _RandomWordsScreenState extends State<RandomWordsScreen> {
           actions: <Widget>[
             IconButton(
               icon: const Icon(
+                Icons.add_circle_outline_rounded,
+                color: Colors.white,
+              ),
+              onPressed: () async {
+                showDialog(
+                    context: context,
+                    builder: (context) => const AddMoreWords());
+              },
+            ),
+            IconButton(
+              icon: const Icon(
                 Icons.report_problem_rounded,
                 color: Colors.white,
               ),
               onPressed: () async {
                 showDialog(
                     context: context,
-                    builder: (context) => const FeedBackDialog());
+                    builder: (context) => const ReportError());
               },
             ),
           ],
@@ -86,7 +96,7 @@ class _RandomWordsScreenState extends State<RandomWordsScreen> {
                       textDe,
                       textAlign: TextAlign.center,
                       style: const TextStyle(
-                        fontSize: 28,
+                        fontSize: 28.0,
                         color: Color(0xFFffe3e3),
                         fontFamily: 'EnglishFont',
                       ),
@@ -97,7 +107,7 @@ class _RandomWordsScreenState extends State<RandomWordsScreen> {
                     textKrd,
                     textAlign: TextAlign.center,
                     style: const TextStyle(
-                      fontSize: 16,
+                      fontSize: 16.0,
                       color: Color(0xFFffc9c9),
                     ),
                   ),
@@ -136,7 +146,7 @@ class _RandomWordsScreenState extends State<RandomWordsScreen> {
                   onPressed: changeText,
                   icon: const Icon(
                     Icons.loop_outlined,
-                    size: 38.0,
+                    size: 42.0,
                   ),
                 ),
               ),
@@ -148,20 +158,20 @@ class _RandomWordsScreenState extends State<RandomWordsScreen> {
   }
 }
 
-class FeedBackDialog extends StatefulWidget {
-  const FeedBackDialog({Key? key}) : super(key: key);
+class AddMoreWords extends StatefulWidget {
+  const AddMoreWords({super.key});
 
   @override
-  State<FeedBackDialog> createState() => _FeedBackDialogState();
+  State<AddMoreWords> createState() => _AddMoreWordsState();
 }
 
-class _FeedBackDialogState extends State<FeedBackDialog> {
-  final TextEditingController _controller = TextEditingController();
-  final GlobalKey<FormState> _formKey = GlobalKey();
+class _AddMoreWordsState extends State<AddMoreWords> {
+  final TextEditingController _controlleraddwords = TextEditingController();
+  final GlobalKey<FormState> _formKeyAddWords = GlobalKey();
 
   @override
   void dispose() {
-    _controller.dispose();
+    _controlleraddwords.dispose();
     super.dispose();
   }
 
@@ -172,15 +182,16 @@ class _FeedBackDialogState extends State<FeedBackDialog> {
       child: AlertDialog(
         backgroundColor: const Color(0xFFfa5252),
         title: const Text(
-          'هەڵە ڕاپۆرت بکە',
+          'وشە زیاد بکە',
           style: TextStyle(
+            fontSize: 20.0,
             color: Colors.white,
           ),
         ),
         content: Form(
-          key: _formKey,
+          key: _formKeyAddWords,
           child: TextFormField(
-            controller: _controller,
+            controller: _controlleraddwords,
             keyboardType: TextInputType.multiline,
             decoration: const InputDecoration(
               fillColor: Colors.white,
@@ -193,7 +204,7 @@ class _FeedBackDialogState extends State<FeedBackDialog> {
             textInputAction: TextInputAction.done,
             validator: (String? text) {
               if (text == null || text.isEmpty) {
-                return 'Please enter a value';
+                return 'تکایە دەقێک دابنێ';
               }
               return null;
             },
@@ -217,24 +228,129 @@ class _FeedBackDialogState extends State<FeedBackDialog> {
               ),
             ),
             onPressed: () async {
-              if (_formKey.currentState!.validate()) {
-                // ignore: unused_local_variable
-                String message;
+              final snackMsg = ScaffoldMessenger.of(context);
+              final hideAlert = Navigator.pop(context);
+              if (_formKeyAddWords.currentState!.validate()) {
+                String addedmsg;
                 try {
-                  // Get a reference to the `feedback` collection
                   final collection =
-                      FirebaseFirestore.instance.collection('feedback');
-
-                  // Write the server's timestamp and the user's feedback
+                      FirebaseFirestore.instance.collection('AddWord');
                   await collection.doc().set({
                     'timestamp': FieldValue.serverTimestamp(),
-                    'feedback': _controller.text,
+                    'word': _controlleraddwords.text,
                   });
-
-                  message = 'Feedback sent successfully';
+                  addedmsg = 'بە سەرکەوتوویی نێردرا، سوپاس😍';
                 } catch (e) {
-                  message = 'Error when sending feedback';
+                  addedmsg = 'هەڵە لە کاتی ناردن، هەوڵبدەرەوە😢';
                 }
+                snackMsg.showSnackBar(
+                  SnackBar(
+                    backgroundColor: const Color(0xFFfa5252),
+                    content: Text(addedmsg),
+                  ),
+                );
+                hideAlert;
+              }
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ReportError extends StatefulWidget {
+  const ReportError({super.key});
+
+  @override
+  State<ReportError> createState() => _ReportErrorState();
+}
+
+class _ReportErrorState extends State<ReportError> {
+  final TextEditingController _controllereport = TextEditingController();
+  final GlobalKey<FormState> _formKeyReport = GlobalKey();
+
+  @override
+  void dispose() {
+    _controllereport.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: AlertDialog(
+        backgroundColor: const Color(0xFFfa5252),
+        title: const Text(
+          'ڕاپۆرتی وشەی هەڵە بکە',
+          style: TextStyle(
+            fontSize: 20.0,
+            color: Colors.white,
+          ),
+        ),
+        content: Form(
+          key: _formKeyReport,
+          child: TextFormField(
+            controller: _controllereport,
+            keyboardType: TextInputType.multiline,
+            decoration: const InputDecoration(
+              fillColor: Colors.white,
+              enabledBorder: UnderlineInputBorder(borderSide: BorderSide.none),
+              focusedBorder: UnderlineInputBorder(borderSide: BorderSide.none),
+              hintText: "تکایە بەم شێوەیە بنووسە: \nسڵاو = Hallo",
+              filled: true,
+            ),
+            maxLines: 3,
+            textInputAction: TextInputAction.done,
+            validator: (String? text) {
+              if (text == null || text.isEmpty) {
+                return 'تکایە دەقێک دابنێ';
+              }
+              return null;
+            },
+          ),
+        ),
+        actions: [
+          TextButton(
+            child: const Text(
+              'هەڵوەشاندنەوە',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+            onPressed: () => Navigator.pop(context),
+          ),
+          TextButton(
+            child: const Text(
+              'ناردن',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+            onPressed: () async {
+              final snackMsg = ScaffoldMessenger.of(context);
+              final hideAlert = Navigator.pop(context);
+              if (_formKeyReport.currentState!.validate()) {
+                String reportedmsg;
+                try {
+                  final collection =
+                      FirebaseFirestore.instance.collection('ReportWord');
+                  await collection.doc().set({
+                    'timestamp': FieldValue.serverTimestamp(),
+                    'word': _controllereport.text,
+                  });
+                  reportedmsg = 'بە سەرکەوتوویی نێردرا، سوپاس😍';
+                } catch (e) {
+                  reportedmsg = 'هەڵە لە کاتی ناردن، هەوڵبدەرەوە😢';
+                }
+                snackMsg.showSnackBar(
+                  SnackBar(
+                    backgroundColor: const Color(0xFFfa5252),
+                    content: Text(reportedmsg),
+                  ),
+                );
+                hideAlert;
               }
             },
           ),

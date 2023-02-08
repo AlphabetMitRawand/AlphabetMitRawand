@@ -24,7 +24,7 @@ class AlphabetMitRawand extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         fontFamily: 'NotoSansKurdish',
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.green,
         colorScheme: ColorScheme.fromSwatch().copyWith(
           secondary: Colors.transparent,
         ),

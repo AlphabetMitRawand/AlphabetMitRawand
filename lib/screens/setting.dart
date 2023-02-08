@@ -257,7 +257,9 @@ class _SettingScreenState extends State<SettingScreen> {
                   ),
                   InkWell(
                     onTap: () => Share.share(
-                        'ئەلفوبێ لەگەڵ ڕەوەند ئەپێکی مۆبایل و وێب-ئەپێکە بۆ فێربوونی زمانی ئەڵمانی بە باشترین و ئاسان: https://github.com/AlphabetMitRawand'),
+                      'بۆ یەکەمجار 🤩😱 لە ژیانتدا دەتوانیت بە زمانی کوردی فێری زمانی ئەڵمانی ببیت لەسەر هەر ئامێرێک بە خۆڕایی🤩😱! \nلینک: https://github.com/AlphabetMitRawand/AlphabetMitRawand',
+                      subject: 'AlphabetMitRawand',
+                    ),
                     child: Container(
                       height: 55.0,
                       margin: const EdgeInsets.symmetric(vertical: 5.0),
