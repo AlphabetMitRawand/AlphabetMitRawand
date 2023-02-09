@@ -1,3 +1,4 @@
+import 'reading.dart';
 import 'setting.dart';
 import 'random_words.dart';
 import 'package:flutter/material.dart';
@@ -192,7 +193,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             Text(
-                              '٥٠٠ وشەی ئەڵمانی بە وەرگێڕانی کوردی',
+                              '١٠٠٠ وشەی ئەڵمانی بە وەرگێڕانی کوردی',
                               style: TextStyle(
                                 color: Color(0xFF1c7ed6),
                                 fontSize: 14.0,
@@ -234,7 +235,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       InkWell(
                         splashColor: Colors.transparent,
                         highlightColor: Colors.transparent,
-                        onTap: () {},
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const ReadingScreen())),
                         child: _container(
                           title: 'خوێندنەوە',
                           image: 'assets/images/books.png',
@@ -258,7 +262,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       InkWell(
                         splashColor: Colors.transparent,
                         highlightColor: Colors.transparent,
-                        onTap: () {},
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const RandomWordsScreen())),
                         child: _container(
                           title: 'وشە و ڕستەکان',
                           image: 'assets/images/words.png',

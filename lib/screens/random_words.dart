@@ -26,131 +26,132 @@ class _RandomWordsScreenState extends State<RandomWordsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(
-      const SystemUiOverlayStyle(
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: const SystemUiOverlayStyle(
         statusBarColor: Color(0xFFfa5252),
         statusBarBrightness: Brightness.light,
         statusBarIconBrightness: Brightness.light,
+        systemNavigationBarColor: Color(0xFFff6b6b),
+        systemNavigationBarIconBrightness: Brightness.light,
       ),
-    );
-
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: Scaffold(
-        backgroundColor: const Color(0xFFff6b6b),
-        appBar: AppBar(
-          backgroundColor: const Color(0xFFfa5252),
-          foregroundColor: Colors.white,
-          elevation: 0,
-          titleSpacing: 0.5,
-          title: const Text(
-            'وشە و ڕستەکان',
-            style: TextStyle(
-              fontSize: 20.0,
+      child: Directionality(
+        textDirection: TextDirection.rtl,
+        child: Scaffold(
+          backgroundColor: const Color(0xFFff6b6b),
+          appBar: AppBar(
+            backgroundColor: const Color(0xFFfa5252),
+            foregroundColor: Colors.white,
+            elevation: 0,
+            titleSpacing: 0.5,
+            title: const Text(
+              'وشە و ڕستەکان',
+              style: TextStyle(
+                fontSize: 20.0,
+              ),
             ),
-          ),
-          actions: <Widget>[
-            IconButton(
-              icon: const Icon(
-                Icons.add_circle_outline_rounded,
+            actions: <Widget>[
+              IconButton(
+                icon: const Icon(
+                  Icons.add_circle_outline_rounded,
+                  color: Colors.white,
+                ),
+                onPressed: () async {
+                  showDialog(
+                      context: context,
+                      builder: (context) => const AddMoreWords());
+                },
+              ),
+              IconButton(
+                icon: const Icon(
+                  Icons.report_problem_rounded,
+                  color: Colors.white,
+                ),
+                onPressed: () async {
+                  showDialog(
+                      context: context,
+                      builder: (context) => const ReportError());
+                },
+              ),
+            ],
+            leading: InkWell(
+              onTap: () => Navigator.pop(context),
+              child: const Icon(
+                Icons.east_rounded,
                 color: Colors.white,
               ),
-              onPressed: () async {
-                showDialog(
-                    context: context,
-                    builder: (context) => const AddMoreWords());
-              },
-            ),
-            IconButton(
-              icon: const Icon(
-                Icons.report_problem_rounded,
-                color: Colors.white,
-              ),
-              onPressed: () async {
-                showDialog(
-                    context: context,
-                    builder: (context) => const ReportError());
-              },
-            ),
-          ],
-          leading: InkWell(
-            onTap: () => Navigator.pop(context),
-            child: const Icon(
-              Icons.east_rounded,
-              color: Colors.white,
             ),
           ),
-        ),
-        body: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Directionality(
-                    textDirection: TextDirection.ltr,
-                    child: Text(
-                      textDe,
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        fontSize: 28.0,
-                        color: Color(0xFFffe3e3),
-                        fontFamily: 'EnglishFont',
+          body: Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Directionality(
+                      textDirection: TextDirection.ltr,
+                      child: Text(
+                        textDe,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: 28.0,
+                          color: Color(0xFFffe3e3),
+                          fontFamily: 'EnglishFont',
+                        ),
                       ),
                     ),
-                  ),
-                  const SizedBox(height: 3.0),
-                  Text(
-                    textKrd,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontSize: 16.0,
-                      color: Color(0xFFffc9c9),
-                    ),
-                  ),
-                ],
-              ),
-              Container(
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(360.0)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color(0xFFfa5252),
-                      spreadRadius: 6,
-                      blurRadius: 50,
-                      offset: Offset(0, 0),
+                    const SizedBox(height: 3.0),
+                    Text(
+                      textKrd,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        fontSize: 16.0,
+                        color: Color(0xFFffc9c9),
+                      ),
                     ),
                   ],
                 ),
-                child: IconButton(
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
-                      const Color(0xFFfa5252),
-                    ),
-                    foregroundColor: MaterialStateProperty.all(
-                      const Color(0xFFffe3e3),
-                    ),
-                    padding:
-                        MaterialStateProperty.all(const EdgeInsets.all(22.0)),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(360.0),
-                          side: const BorderSide(
-                            color: Color(0xFFfa5252),
-                          )),
-                    ),
+                Container(
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(360.0)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color(0xFFfa5252),
+                        spreadRadius: 6,
+                        blurRadius: 50,
+                        offset: Offset(0, 0),
+                      ),
+                    ],
                   ),
-                  onPressed: changeText,
-                  icon: const Icon(
-                    Icons.loop_outlined,
-                    size: 42.0,
+                  child: IconButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(
+                        const Color(0xFFfa5252),
+                      ),
+                      foregroundColor: MaterialStateProperty.all(
+                        const Color(0xFFffe3e3),
+                      ),
+                      padding:
+                          MaterialStateProperty.all(const EdgeInsets.all(22.0)),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(360.0),
+                            side: const BorderSide(
+                              color: Color(0xFFfa5252),
+                            )),
+                      ),
+                    ),
+                    onPressed: changeText,
+                    icon: const Icon(
+                      Icons.loop_outlined,
+                      size: 42.0,
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
