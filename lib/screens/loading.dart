@@ -1,7 +1,6 @@
 import 'home.dart';
 import 'dart:async';
 import 'onboarding.dart';
-import 'dart:io' show Platform;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:drop_shadow_image/drop_shadow_image.dart';
@@ -27,77 +26,35 @@ class _LoadingScreenState extends State<LoadingScreen> {
         prefsOnboarding.getInt('ShowOneTimeOnboarding') ?? 0;
     prefsOnboarding.setInt('ShowOneTimeOnboarding', launchTimeOnboarding + 1);
 
-    if (Platform.isAndroid) {
-      Timer(const Duration(seconds: 6), () {
-        if (launchTimeOnboarding == 0) {
-          if (!mounted) return;
-          Timer(const Duration(seconds: 6), () {
-            if (launchTimeOnboarding == 0) {
-              if (!mounted) return;
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (BuildContext context) {
-                return const OnBoardingScreen();
-              }));
-            } else {
-              if (!mounted) return;
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (BuildContext context) {
-                return const OnBoardingScreen();
-              }));
-            }
-          });
-        } else {
-          if (!mounted) return;
-          Timer(const Duration(seconds: 6), () {
-            if (launchTimeOnboarding == 0) {
-              if (!mounted) return;
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (BuildContext context) {
-                return const OnBoardingScreen();
-              }));
-            } else {
-              if (!mounted) return;
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (BuildContext context) {
-                return const HomeScreen();
-              }));
-            }
-          });
-        }
-      });
-    } else if (Platform.isIOS) {
-      Timer(const Duration(seconds: 6), () {
-        if (launchTimeOnboarding == 0) {
-          if (!mounted) return;
-          Timer(const Duration(seconds: 6), () {
-            if (launchTimeOnboarding == 0) {
-              if (!mounted) return;
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (BuildContext context) {
-                return const OnBoardingScreen();
-              }));
-            } else {
-              if (!mounted) return;
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (BuildContext context) {
-                return const HomeScreen();
-              }));
-            }
-          });
-        } else {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (BuildContext context) {
-            return const HomeScreen();
-          }));
-        }
-      });
-    } else {
-      if (!mounted) return;
-      Navigator.push(context,
-          MaterialPageRoute(builder: (BuildContext context) {
-        return const DesktopNotSupported();
-      }));
-    }
+    Timer(const Duration(seconds: 6), () {
+      if (launchTimeOnboarding == 0) {
+        if (!mounted) return;
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (BuildContext context) {
+              return WillPopScope(
+                onWillPop: () async => false,
+                child: const OnBoardingScreen(),
+              );
+            },
+          ),
+        );
+      } else {
+        if (!mounted) return;
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (BuildContext context) {
+              return WillPopScope(
+                onWillPop: () async => false,
+                child: const HomeScreen(),
+              );
+            },
+          ),
+        );
+      }
+    });
   }
 
   @override

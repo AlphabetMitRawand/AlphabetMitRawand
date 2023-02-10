@@ -201,7 +201,7 @@ class _AddMoreWordsState extends State<AddMoreWords> {
               hintText: "تکایە بەم شێوەیە بنووسە: \nسڵاو = Hallo",
               filled: true,
             ),
-            maxLines: 3,
+            maxLines: 2,
             textInputAction: TextInputAction.done,
             validator: (String? text) {
               if (text == null || text.isEmpty) {
@@ -302,7 +302,7 @@ class _ReportErrorState extends State<ReportError> {
               hintText: "تکایە بەم شێوەیە بنووسە: \nسڵاو = Hallo",
               filled: true,
             ),
-            maxLines: 3,
+            maxLines: 2,
             textInputAction: TextInputAction.done,
             validator: (String? text) {
               if (text == null || text.isEmpty) {

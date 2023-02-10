@@ -1,3 +1,5 @@
+import 'listen.dart';
+import 'grammar.dart';
 import 'reading.dart';
 import 'setting.dart';
 import 'random_words.dart';
@@ -250,7 +252,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       InkWell(
                         splashColor: Colors.transparent,
                         highlightColor: Colors.transparent,
-                        onTap: () {},
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const ListenScreen())),
                         child: _container(
                           title: 'گوێگرتن',
                           image: 'assets/images/listening.png',
@@ -278,7 +284,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       InkWell(
                         splashColor: Colors.transparent,
                         highlightColor: Colors.transparent,
-                        onTap: () {},
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const GrammarScreen())),
                         child: _container(
                           title: 'ڕێزمان',
                           image: 'assets/images/grammar.png',

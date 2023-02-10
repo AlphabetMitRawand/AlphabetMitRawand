@@ -3,14 +3,14 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class ReadingScreen extends StatefulWidget {
-  const ReadingScreen({super.key});
+class GrammarScreen extends StatefulWidget {
+  const GrammarScreen({super.key});
 
   @override
-  State<ReadingScreen> createState() => _ReadingScreenState();
+  State<GrammarScreen> createState() => _GrammarScreenState();
 }
 
-class _ReadingScreenState extends State<ReadingScreen> {
+class _GrammarScreenState extends State<GrammarScreen> {
   late List data;
 
   @override
@@ -33,7 +33,7 @@ class _ReadingScreenState extends State<ReadingScreen> {
             elevation: 0,
             titleSpacing: 0.1,
             title: const Text(
-              'خوێندنەوە',
+              'ڕێزمان',
               style: TextStyle(
                 fontSize: 20.0,
               ),
@@ -62,7 +62,7 @@ class _ReadingScreenState extends State<ReadingScreen> {
                       return InkWell(
                         onTap: () {},
                         child: Card(
-                          color: const Color(0xFF8ce99a),
+                          color: const Color(0xFFda77f2),
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
                               horizontal: 16,
@@ -79,24 +79,26 @@ class _ReadingScreenState extends State<ReadingScreen> {
                                         Text(
                                           newData[index]['url'],
                                           style: const TextStyle(
-                                              color: Color(0xFF2b8a3e),
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 18.0),
+                                            color: Color(0xFF862e9c),
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 18.0,
+                                          ),
                                         ),
                                         const SizedBox(width: 3),
                                         Text(
                                           newData[index]['title'],
                                           style: const TextStyle(
-                                              color: Color(0xFF2b8a3e),
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 18.0),
+                                            color: Color(0xFF862e9c),
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 18.0,
+                                          ),
                                         ),
                                       ],
                                     ),
                                     Text(
                                       newData[index]['text'],
                                       style: const TextStyle(
-                                        color: Color(0xFF2f9e44),
+                                        color: Color(0xFF9c36b5),
                                       ),
                                     ),
                                   ],

@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_web_browser/flutter_web_browser.dart';
 
 class SettingScreen extends StatefulWidget {
@@ -257,7 +258,7 @@ class _SettingScreenState extends State<SettingScreen> {
                   ),
                   InkWell(
                     onTap: () => Share.share(
-                      'بۆ یەکەمجار 🤩😱 لە ژیانتدا دەتوانیت بە زمانی کوردی فێری زمانی ئەڵمانی ببیت لەسەر هەر ئامێرێک بە خۆڕایی🤩😱! \nلینک: https://github.com/AlphabetMitRawand/AlphabetMitRawand',
+                      'بۆ یەکەمجار😱 دەتوانیت بە زمانی شیرینی کوردی سۆرانی فێری زمانی ئەڵمانی🇩🇪 ببیت تەنها لەرێگەی مۆبایلەکەتەوە بە ئاسانترین ڕێگا😍! \nئیستا دایبەزینە: \nhttps://alphabet.r4wand.eu.org',
                       subject: 'AlphabetMitRawand',
                     ),
                     child: Container(
@@ -371,32 +372,9 @@ class _SettingScreenState extends State<SettingScreen> {
                   ),
                   InkWell(
                     onTap: () async {
-                      if (kIsWeb) {
-                        launchUrl(
-                          Uri.parse(
-                              'https://github.com/AlphabetMitRawand/AlphabetMitRawand'),
-                        );
-                      } else {
-                        FlutterWebBrowser.openWebPage(
-                          url:
-                              'https://github.com/AlphabetMitRawand/AlphabetMitRawand',
-                          customTabsOptions: const CustomTabsOptions(
-                            colorScheme: CustomTabsColorScheme.light,
-                            shareState: CustomTabsShareState.on,
-                            instantAppsEnabled: true,
-                            showTitle: true,
-                            urlBarHidingEnabled: true,
-                          ),
-                          safariVCOptions: const SafariViewControllerOptions(
-                            barCollapsingEnabled: true,
-                            // preferredBarTintColor: Colors.green,
-                            // preferredControlTintColor: Colors.amber,
-                            dismissButtonStyle:
-                                SafariViewControllerDismissButtonStyle.close,
-                            modalPresentationCapturesStatusBarAppearance: true,
-                          ),
-                        );
-                      }
+                      showDialog(
+                          context: context,
+                          builder: (context) => const ReportError());
                     },
                     child: Container(
                       height: 55.0,
@@ -444,6 +422,125 @@ class _SettingScreenState extends State<SettingScreen> {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class ReportError extends StatefulWidget {
+  const ReportError({super.key});
+
+  @override
+  State<ReportError> createState() => _ReportErrorState();
+}
+
+class _ReportErrorState extends State<ReportError> {
+  final TextEditingController _controllereport = TextEditingController();
+  final GlobalKey<FormState> _formKeyReport = GlobalKey();
+
+  @override
+  void dispose() {
+    _controllereport.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: AlertDialog(
+        backgroundColor: const Color(0xFF212529),
+        icon: const Icon(
+          Icons.bug_report_rounded,
+          size: 48.0,
+          color: Color(0xFFf8f9fa),
+        ),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: const [
+            Text(
+              "هەڵەیەک ڕاپۆرت بکە",
+              style: TextStyle(
+                color: Color(0xFFf8f9fa),
+              ),
+            ),
+            SizedBox(height: 6.0),
+            Text(
+              "تکایە ئەوە بەجێبهێڵە ئەگەر هەڵەت نەبینیوە!",
+              style: TextStyle(
+                fontSize: 12.0,
+                color: Color(0xFFe9ecef),
+              ),
+            ),
+          ],
+        ),
+        content: Form(
+          key: _formKeyReport,
+          child: TextFormField(
+            controller: _controllereport,
+            keyboardType: TextInputType.multiline,
+            decoration: const InputDecoration(
+              fillColor: Color(0xFFf8f9fa),
+              enabledBorder: UnderlineInputBorder(borderSide: BorderSide.none),
+              focusedBorder: UnderlineInputBorder(borderSide: BorderSide.none),
+              hintText: "تکایە هەڵەیەک بنووسە کە لەم ئەپەدا بینیوتە",
+              filled: true,
+            ),
+            maxLines: 4,
+            textInputAction: TextInputAction.done,
+            validator: (String? text) {
+              if (text == null || text.isEmpty) {
+                return 'تکایە دەقێک دابنێ';
+              }
+              return null;
+            },
+          ),
+        ),
+        actionsAlignment: MainAxisAlignment.center,
+        actions: [
+          TextButton(
+            child: const Text(
+              'هەڵوەشاندنەوە',
+              style: TextStyle(
+                color: Color(0xFFf8f9fa),
+              ),
+            ),
+            onPressed: () => Navigator.pop(context),
+          ),
+          TextButton(
+            child: const Text(
+              'ناردن',
+              style: TextStyle(
+                color: Color(0xFFf8f9fa),
+              ),
+            ),
+            onPressed: () async {
+              final snackMsg = ScaffoldMessenger.of(context);
+              final hideAlert = Navigator.pop(context);
+              if (_formKeyReport.currentState!.validate()) {
+                String reportedmsg;
+                try {
+                  final collection =
+                      FirebaseFirestore.instance.collection('Report');
+                  await collection.doc().set({
+                    'timestamp': FieldValue.serverTimestamp(),
+                    'text': _controllereport.text
+                  });
+                  reportedmsg = 'بە سەرکەوتوویی نێردرا، سوپاس😍';
+                } catch (e) {
+                  reportedmsg = 'هەڵە لە کاتی ناردن، هەوڵبدەرەوە😢';
+                }
+                snackMsg.showSnackBar(
+                  SnackBar(
+                    backgroundColor: const Color(0xFF212529),
+                    content: Text(reportedmsg),
+                  ),
+                );
+                hideAlert;
+              }
+            },
+          ),
+        ],
       ),
     );
   }

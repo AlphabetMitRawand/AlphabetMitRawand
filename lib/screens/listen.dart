@@ -3,14 +3,14 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class ReadingScreen extends StatefulWidget {
-  const ReadingScreen({super.key});
+class ListenScreen extends StatefulWidget {
+  const ListenScreen({super.key});
 
   @override
-  State<ReadingScreen> createState() => _ReadingScreenState();
+  State<ListenScreen> createState() => _ListenScreenState();
 }
 
-class _ReadingScreenState extends State<ReadingScreen> {
+class _ListenScreenState extends State<ListenScreen> {
   late List data;
 
   @override
@@ -33,7 +33,7 @@ class _ReadingScreenState extends State<ReadingScreen> {
             elevation: 0,
             titleSpacing: 0.1,
             title: const Text(
-              'خوێندنەوە',
+              'گوێگرتن',
               style: TextStyle(
                 fontSize: 20.0,
               ),
@@ -62,12 +62,10 @@ class _ReadingScreenState extends State<ReadingScreen> {
                       return InkWell(
                         onTap: () {},
                         child: Card(
-                          color: const Color(0xFF8ce99a),
+                          color: const Color(0xFFffa94d),
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
-                              horizontal: 16,
-                              vertical: 33,
-                            ),
+                                horizontal: 16, vertical: 33,),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
@@ -79,7 +77,7 @@ class _ReadingScreenState extends State<ReadingScreen> {
                                         Text(
                                           newData[index]['url'],
                                           style: const TextStyle(
-                                              color: Color(0xFF2b8a3e),
+                                              color: Color(0xFFd9480f),
                                               fontWeight: FontWeight.bold,
                                               fontSize: 18.0),
                                         ),
@@ -87,7 +85,7 @@ class _ReadingScreenState extends State<ReadingScreen> {
                                         Text(
                                           newData[index]['title'],
                                           style: const TextStyle(
-                                              color: Color(0xFF2b8a3e),
+                                              color: Color(0xFFd9480f),
                                               fontWeight: FontWeight.bold,
                                               fontSize: 18.0),
                                         ),
@@ -96,7 +94,7 @@ class _ReadingScreenState extends State<ReadingScreen> {
                                     Text(
                                       newData[index]['text'],
                                       style: const TextStyle(
-                                        color: Color(0xFF2f9e44),
+                                        color: Color(0xFFe8590c),
                                       ),
                                     ),
                                   ],
