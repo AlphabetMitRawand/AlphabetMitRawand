@@ -1,1 +1,2 @@
 # AlphabetMitRawand
+بەم زووانە 
