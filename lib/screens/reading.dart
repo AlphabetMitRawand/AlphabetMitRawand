@@ -77,19 +77,29 @@ class _ReadingScreenState extends State<ReadingScreen> {
                                     Row(
                                       children: [
                                         Text(
-                                          newData[index]['url'],
+                                          newData[index]['nummber'],
                                           style: const TextStyle(
-                                              color: Color(0xFF2b8a3e),
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 18.0),
+                                            color: Color(0xFF2b8a3e),
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 18.0,
+                                          ),
+                                        ),
+                                        const Text(
+                                          ".",
+                                          style: TextStyle(
+                                            color: Color(0xFF2b8a3e),
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 18.0,
+                                          ),
                                         ),
                                         const SizedBox(width: 3),
                                         Text(
                                           newData[index]['title'],
                                           style: const TextStyle(
-                                              color: Color(0xFF2b8a3e),
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 18.0),
+                                            color: Color(0xFF2b8a3e),
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 18.0,
+                                          ),
                                         ),
                                       ],
                                     ),
