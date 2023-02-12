@@ -1,11 +1,11 @@
 {
-    "name": "alphabetmitrawand",
-    "short_name": "alphabetmitrawand",
+    "name": "AlphabetMitRawand",
+    "short_name": "AlphabetMitRawand",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "AlphabetMitRawand is a mobile app and web-app to learn German in the best and easy way.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

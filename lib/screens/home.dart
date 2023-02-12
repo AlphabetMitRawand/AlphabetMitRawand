@@ -238,9 +238,11 @@ class _HomeScreenState extends State<HomeScreen> {
                         splashColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const ReadingScreen())),
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ReadingScreen(),
+                          ),
+                        ),
                         child: _container(
                           title: 'خوێندنەوە',
                           image: 'assets/images/books.png',
@@ -255,8 +257,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) =>
-                                    const ListenScreen())),
+                                builder: (context) => const ListenScreen())),
                         child: _container(
                           title: 'گوێگرتن',
                           image: 'assets/images/listening.png',
@@ -287,8 +288,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) =>
-                                    const GrammarScreen())),
+                                builder: (context) => const GrammarScreen())),
                         child: _container(
                           title: 'ڕێزمان',
                           image: 'assets/images/grammar.png',

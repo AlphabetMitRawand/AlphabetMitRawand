@@ -1,4 +1,3 @@
-// codes by https://faun.pub/flutter-implementing-listview-widget-using-json-file-fbd1e3ba60ad
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -60,7 +59,19 @@ class _ReadingScreenState extends State<ReadingScreen> {
                   return ListView.builder(
                     itemBuilder: (BuildContext context, int index) {
                       return InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ReadingDetailScreen(
+                                title: newData[index]['title'],
+                                titlede: newData[index]['titlede'],
+                                data: newData[index]['data'],
+                                datackb: newData[index]['datackb'],
+                              ),
+                            ),
+                          );
+                        },
                         child: Card(
                           color: const Color(0xFF8ce99a),
                           child: Padding(
@@ -120,6 +131,107 @@ class _ReadingScreenState extends State<ReadingScreen> {
                     itemCount: newData == null ? 0 : newData.length,
                   );
                 },
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class ReadingDetailScreen extends StatelessWidget {
+  final String title;
+  final String titlede;
+  final String data;
+  final String datackb;
+
+  const ReadingDetailScreen({
+    super.key,
+    required this.title,
+    required this.titlede,
+    required this.data,
+    required this.datackb,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: const SystemUiOverlayStyle(
+        statusBarColor: Color(0xFFf8f9fa),
+        statusBarBrightness: Brightness.dark,
+        statusBarIconBrightness: Brightness.dark,
+        systemNavigationBarColor: Colors.white,
+        systemNavigationBarIconBrightness: Brightness.dark,
+      ),
+      child: Directionality(
+        textDirection: TextDirection.rtl,
+        child: Scaffold(
+          backgroundColor: Colors.white,
+          appBar: AppBar(
+            backgroundColor: const Color(0xFFf8f9fa),
+            foregroundColor: const Color(0xFF212529),
+            elevation: 0,
+            titleSpacing: 0.1,
+            title: Text(
+              title,
+              style: const TextStyle(
+                fontSize: 20.0,
+              ),
+            ),
+            leading: InkWell(
+              onTap: () => Navigator.pop(context),
+              child: const Icon(
+                Icons.east_rounded,
+                color: Color(0xFF212529),
+              ),
+            ),
+          ),
+          body: Padding(
+            padding: const EdgeInsets.only(
+              left: 8,
+              right: 8,
+              bottom: 8,
+              top: 0,
+            ),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Directionality(
+                    textDirection: TextDirection.ltr,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          titlede,
+                          style: const TextStyle(
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'Lato',
+                            color: Color(0xFF212529),
+                          ),
+                        ),
+                        Text(
+                          data,
+                          style: const TextStyle(
+                            fontFamily: 'Lato',
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    title,
+                    style: const TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xFF212529),
+                    ),
+                  ),
+                  Text(datackb),
+                ],
               ),
             ),
           ),

@@ -7,17 +7,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:422185554814:android:2a8e64c2a12c267853592f",
+        "mobilesdk_app_id": "1:422185554814:android:305aba1c8dc0e1bc53592f",
         "android_client_info": {
-          "package_name": "com.example.alphabetmitrawand"
+          "package_name": "com.rawandkhalid.alphabetmitrawand"
         }
       },
       "oauth_client": [
         {
-          "client_id": "422185554814-11g22p3j8h5j1tem6tf2hlg82d83ihga.apps.googleusercontent.com",
+          "client_id": "422185554814-8ikdvjf6fr36ilf216lviue6l2gv5j1d.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.alphabetmitrawand",
+            "package_name": "com.rawandkhalid.alphabetmitrawand",
             "certificate_hash": "45feff56d2e2aa3b026ddce0fdb94384847eae2d"
           }
         },
@@ -37,35 +37,13 @@
             {
               "client_id": "422185554814-d9t455e3sb7mae9ndjqanm9gactmqmat.apps.googleusercontent.com",
               "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:422185554814:android:305aba1c8dc0e1bc53592f",
-        "android_client_info": {
-          "package_name": "com.rawandkhalid.alphabetmitrawand"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "422185554814-d9t455e3sb7mae9ndjqanm9gactmqmat.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBArAbz1_aUQUO5aEBD-ibLc2vPP99KVO4"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
+            },
             {
-              "client_id": "422185554814-d9t455e3sb7mae9ndjqanm9gactmqmat.apps.googleusercontent.com",
-              "client_type": 3
+              "client_id": "422185554814-qgfeak3k99pl5ek7npf8fi57kji8cj8p.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.alphabetmitrawand"
+              }
             }
           ]
         }
