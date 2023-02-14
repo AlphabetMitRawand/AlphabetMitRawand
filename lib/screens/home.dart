@@ -48,6 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
               title,
               style: TextStyle(
                 color: clrText,
+                letterSpacing: 0.0,
                 fontSize: 20.0,
               ),
             ),
@@ -83,6 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
           appBar: AppBar(
             backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
+            centerTitle: false,
             title: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
@@ -91,6 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   style: TextStyle(
                     color: Color(0xFF495057),
                     fontSize: 16.0,
+                    letterSpacing: 0.0,
                   ),
                 ),
                 Text(
@@ -99,6 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Color(0xFF212529),
                     fontSize: 18.0,
                     height: 1,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -191,6 +195,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               style: TextStyle(
                                 color: Color(0xFF1864ab),
                                 fontSize: 18.0,
+                                letterSpacing: 0.0,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
@@ -199,6 +204,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               style: TextStyle(
                                 color: Color(0xFF1c7ed6),
                                 fontSize: 14.0,
+                                letterSpacing: 0.0,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -218,6 +224,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     'بەشەکان',
                     style: TextStyle(
                       fontSize: 18.0,
+                      letterSpacing: 0.0,
                       color: Color(0xFF212529),
                       fontWeight: FontWeight.w500,
                     ),
