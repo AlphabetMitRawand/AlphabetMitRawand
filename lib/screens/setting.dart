@@ -32,6 +32,9 @@ class _SettingScreenState extends State<SettingScreen> {
           backgroundColor: Colors.white,
           appBar: AppBar(
             backgroundColor: Colors.white,
+            surfaceTintColor: Colors.white,
+            automaticallyImplyLeading: false,
+            shadowColor: Colors.transparent,
             foregroundColor: const Color(0xFF212529),
             elevation: 0,
             titleSpacing: 0.1,
@@ -39,6 +42,8 @@ class _SettingScreenState extends State<SettingScreen> {
               'سەبارەت',
               style: TextStyle(
                 fontSize: 20.0,
+                    letterSpacing: 0.0,
+                    fontWeight: FontWeight.w400,
               ),
             ),
             leading: InkWell(
@@ -110,7 +115,8 @@ class _SettingScreenState extends State<SettingScreen> {
                                     style: TextStyle(
                                       color: Color(0xFF212529),
                                       fontSize: 16.0,
-                                      fontWeight: FontWeight.bold,
+                    letterSpacing: 0.0,
+                    fontWeight: FontWeight.w600,
                                     ),
                                   ),
                                   SizedBox(
@@ -128,6 +134,8 @@ class _SettingScreenState extends State<SettingScreen> {
                                 style: TextStyle(
                                   color: Color(0xFF495057),
                                   fontSize: 14.0,
+                    letterSpacing: 0.0,
+                    fontWeight: FontWeight.w400,
                                 ),
                               ),
                             ],
@@ -188,6 +196,8 @@ class _SettingScreenState extends State<SettingScreen> {
                                 style: TextStyle(
                                   fontSize: 16.0,
                                   color: Color(0xFF212529),
+                    letterSpacing: 0.0,
+                    fontWeight: FontWeight.w400,
                                 ),
                               ),
                             ],
@@ -228,6 +238,8 @@ class _SettingScreenState extends State<SettingScreen> {
                               style: TextStyle(
                                 fontSize: 16.0,
                                 color: Color(0xFF212529),
+                    letterSpacing: 0.0,
+                    fontWeight: FontWeight.w400,
                               ),
                             ),
                           ],

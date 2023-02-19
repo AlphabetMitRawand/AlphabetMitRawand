@@ -14,20 +14,17 @@ dependencies:
 
 
   cupertino_icons: ^1.0.2
+  flutter_offline: ^2.1.0
   url_strategy: ^0.2.0
-  drop_shadow_image: ^0.9.1
-  smooth_page_indicator: ^1.0.0+2
-  shared_preferences: ^2.0.17
+  smooth_page_indicator: ^1.0.1
+  cloud_firestore: ^4.4.2
+  share_plus: ^6.3.1
   url_launcher: ^6.1.9
   flutter_web_browser: ^0.17.1
-  share_plus: ^6.3.0
-  flutter_local_notifications: ^13.0.0
-  flutter_kurdish_localization: ^1.0.1
-  firebase_core: ^2.5.0
-  firebase_analytics: ^10.1.1
-  cloud_firestore: ^4.3.2
-  connectivity: ^3.0.6
-  flutter_offline: ^2.1.0
+  drop_shadow_image: ^0.9.1
+  shared_preferences: ^2.0.17
+  translator: ^0.1.7
+  firebase_core: ^2.6.1
 
 dev_dependencies:
   flutter_test:
@@ -51,8 +48,10 @@ flutter:
     - family: Lato
       fonts:
         - asset: assets/fonts/Lato.ttf
-    - family: NotoSansKurdish
+    - family: Salah
       fonts:
-        - asset: assets/fonts/NotoSansKurdish.ttf
-        - asset: assets/fonts/NotoSansKurdish-Bold.ttf
+        - asset: assets/fonts/Sahel.ttf
+        - asset: assets/fonts/Sahel-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Sahel-Bold.ttf
           weight: 700

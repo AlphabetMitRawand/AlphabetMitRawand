@@ -47,9 +47,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             Text(
               title,
               style: const TextStyle(
-                color: Color(0xFF212529),
                 fontSize: 18.0,
-                fontWeight: FontWeight.bold,
+                color: Color(0xFF212529),
+                fontWeight: FontWeight.w700,
               ),
             ),
             const SizedBox(
@@ -63,8 +63,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 text,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
-                  color: Color(0xFF495057),
                   fontSize: 16.0,
+                  color: Color(0xFF495057),
+                  fontWeight: FontWeight.w400,
                 ),
               ),
             ),
@@ -149,24 +150,29 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   child: isLastPage
                       ? InkWell(
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(
-                                builder: (BuildContext context) {
-                              return const HomeScreen();
-                            }));
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) {
+                                return const HomeScreen();
+                              }),
+                            );
                           },
                           child: const Text(
                             'دەستپێبکە',
                             style: TextStyle(
-                              color: Color(0xFF343a40),
                               fontSize: 18.0,
+                              color: Color(0xFF343a40),
+                              fontWeight: FontWeight.w400,
                             ),
                           ),
                         )
                       : const Text(
                           'دواتر',
                           style: TextStyle(
-                            color: Color(0xFF343a40),
                             fontSize: 18.0,
+                            color: Color(0xFF343a40),
+                            fontWeight: FontWeight.w400,
                           ),
                         ),
                 )
