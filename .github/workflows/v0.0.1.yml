@@ -1,4 +1,4 @@
-name: Test build v0.0.1
+name: Test build
 
 on:
   push:
@@ -32,3 +32,5 @@ jobs:
       with:
         github_token: ${{ secrets.UPLOAD_WEB }}
         publish_dir: build/web
+          target_branch: web
+          cname: alphabetmitrawand.github.io/AlphabetMitRawand/
