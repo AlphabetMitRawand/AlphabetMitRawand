@@ -32,5 +32,5 @@ jobs:
       with:
         github_token: ${{ secrets.UPLOAD_WEB }}
         publish_dir: build/web
-          target_branch: web
-          cname: alphabetmitrawand.github.io/AlphabetMitRawand/
+        target_branch: web
+        cname: alphabetmitrawand.github.io/AlphabetMitRawand/
