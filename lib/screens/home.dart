@@ -307,8 +307,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                         child: _container(
-                          title: 'وەرگێڕان',
-                          image: Icons.g_translate_rounded,
+                          title: 'گوێگرتن',
+                          image: Icons.hearing_rounded,
                           clrBox: const Color(0xFF748ffc),
                           clrText: const Color(0xFF364fc7),
                           clrShadow: const Color(0xFFdbe4ff),

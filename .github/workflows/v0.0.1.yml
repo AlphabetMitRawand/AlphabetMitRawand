@@ -1,0 +1,35 @@
+name: Test build v0.0.1
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.7.4'
+
+    - name: Get packages
+      run: flutter pub get
+
+    - name: Build APK
+      run: flutter build apk --release
+
+    - name: Build Web
+      run: flutter build web --release
+
+    - name: Push Web to dev branch
+      uses: ad-m/github-push-action@master
+      with:
+        branch: dev
+        directory: build/web
+        github_token: ${{ secrets.UPLOAD_WEB }}
