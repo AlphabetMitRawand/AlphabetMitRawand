@@ -32,4 +32,5 @@ jobs:
       with:
         branch: dev
         directory: build/web
-        github_token: ${{ secrets.UPLOAD_WEB }}
+        github_token: ${{ secrets.actions.UPLOAD_WEB }}
+        
