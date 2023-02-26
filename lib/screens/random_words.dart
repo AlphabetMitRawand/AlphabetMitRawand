@@ -1,6 +1,6 @@
 import 'dart:math';
-import '../service/words_de.dart';
-import '../service/words_krd.dart';
+import '../data/words_de.dart';
+import '../data/words_krd.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -13,7 +13,7 @@ class RandomWordsScreen extends StatefulWidget {
 }
 
 class _RandomWordsScreenState extends State<RandomWordsScreen> {
-  String textDe = 'Las Anfängen';
+  String textDe = 'Las Anfangen';
   String textKrd = 'با دەست پێ بکەین';
 
   void changeText() async {

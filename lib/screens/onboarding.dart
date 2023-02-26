@@ -23,7 +23,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   }
 
   Widget pageScreens({
-    required String image,
+    required Color color,
+    required Color secColor,
+    required IconData icon,
     required String title,
     required String text,
   }) =>
@@ -36,19 +38,19 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             const SizedBox(
               height: 32.0,
             ),
-            Image.asset(
-              image,
-              width: 100,
-              height: 100,
+            Icon(
+              icon,
+              size: 100,
+              color: color,
             ),
             const SizedBox(
               height: 4.0,
             ),
             Text(
               title,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 18.0,
-                color: Color(0xFF212529),
+                color: color,
                 fontWeight: FontWeight.w700,
               ),
             ),
@@ -62,9 +64,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               child: Text(
                 text,
                 textAlign: TextAlign.center,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 16.0,
-                  color: Color(0xFF495057),
+                  color: secColor,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -95,18 +97,24 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               controller: _controller,
               children: [
                 pageScreens(
-                  image: 'assets/images/words.png',
+                  color: const Color(0xFFc92a2a),
+                  secColor: const Color(0xFF495057),
+                  icon: Icons.format_indent_increase_rounded,
                   title: 'وشە و ڕستەکان',
                   text:
-                      'زیاتر لە ١٠٠٠ وشە و ڕستە لە ئەڵمانییەوە وەرگێڕدراوە بۆ کوردی و فێربوونی ئاسانە',
+                      'زیاتر لە ٣٠٠٠ وشە و ڕستە لە ئەڵمانییەوە وەرگێڕدراوە بۆ کوردی و فێربوونی ئاسانە',
                 ),
                 pageScreens(
-                  image: 'assets/images/listening.png',
+                  color: const Color(0xFFd9480f),
+                  secColor: const Color(0xFF495057),
+                  icon: Icons.hearing_rounded,
                   title: 'گوێگرتن و خوێندنەوە',
-                  text: '٥٠ تێکست و گوێگرتن لە دەنگی بۆ کەسانی سەرەتایی',
+                  text: '٢٥٠ تێکست و گوێگرتن لە دەنگی بۆ کەسانی سەرەتایی',
                 ),
                 pageScreens(
-                  image: 'assets/images/grammar.png',
+                  color: const Color(0xFF862e9c),
+                  secColor: const Color(0xFF495057),
+                  icon: Icons.forum_rounded,
                   title: 'ڕێزمانی ئەڵمانی',
                   text:
                       'هەموو ڕێزمانەکانی بۆ ئاستەکانی ئەلفوبێ و A1/2 لێرەدا بەردەستە و بە ئاسانی ڕوون کراوەتەوە',

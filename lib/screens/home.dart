@@ -1,7 +1,7 @@
 import 'grammar.dart';
 import 'reading.dart';
 import 'setting.dart';
-import 'translate.dart';
+import 'listen.dart';
 import 'random_words.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -177,7 +177,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             Text(
-                              '١٠٠٠ وشەی ئەڵمانی بە وەرگێڕانی کوردی',
+                              '٣٠٠٠ وشەی ئەڵمانی بە وەرگێڕانی کوردی',
                               style: TextStyle(
                                 color: Color(0xFF1c7ed6),
                                 fontSize: 14.0,
@@ -236,31 +236,24 @@ class _HomeScreenState extends State<HomeScreen> {
                           clrImage: const Color(0xFF2b8a3e),
                         ),
                       ),
-                      // InkWell(
-                      //   splashColor: Colors.transparent,
-                      //   highlightColor: Colors.transparent,
-                      //   onTap: () => ScaffoldMessenger.of(context).showSnackBar(
-                      //     SnackBar(
-                      //       backgroundColor: const Color(0xFFd9480f),
-                      //       content: const Text(
-                      //         'بەردەست نییە',
-                      //         style: TextStyle(color: Color(0xFFffe8cc)),
-                      //       ),
-                      //       action: SnackBarAction(
-                      //         label: 'باشە',
-                      //         onPressed: () {},
-                      //       ),
-                      //     ),
-                      //   ),
-                      //   child: _container(
-                      //     title: 'گوێگرتن',
-                      //     image: Icons.hearing_rounded,
-                      //     clrBox: const Color(0xFFffa94d),
-                      //     clrText: const Color(0xFFd9480f),
-                      //     clrShadow: const Color(0xFFffe8cc),
-                      //     clrImage: const Color(0xFFd9480f),
-                      //   ),
-                      // ),
+                      InkWell(
+                        splashColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ListenScreen(),
+                          ),
+                        ),
+                        child: _container(
+                          title: 'گوێگرتن',
+                          image: Icons.hearing_rounded,
+                          clrBox: const Color(0xFFffa94d),
+                          clrText: const Color(0xFFd9480f),
+                          clrShadow: const Color(0xFFffe8cc),
+                          clrImage: const Color(0xFFd9480f),
+                        ),
+                      ),
                       InkWell(
                         splashColor: Colors.transparent,
                         highlightColor: Colors.transparent,
@@ -297,24 +290,16 @@ class _HomeScreenState extends State<HomeScreen> {
                           clrImage: const Color(0xFF862e9c),
                         ),
                       ),
-                      InkWell(
-                        splashColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const TranslateScreen(),
-                          ),
-                        ),
-                        child: _container(
-                          title: 'گوێگرتن',
-                          image: Icons.hearing_rounded,
-                          clrBox: const Color(0xFF748ffc),
-                          clrText: const Color(0xFF364fc7),
-                          clrShadow: const Color(0xFFdbe4ff),
-                          clrImage: const Color(0xFF364fc7),
-                        ),
-                      ),
+                      // InkWell(
+                      //   child: _container(
+                      //     title: 'گوێگرتن',
+                      //     image: Icons.hearing_rounded,
+                      //     clrBox: const Color(0xFF748ffc),
+                      //     clrText: const Color(0xFF364fc7),
+                      //     clrShadow: const Color(0xFFdbe4ff),
+                      //     clrImage: const Color(0xFF364fc7),
+                      //   ),
+                      // ),
                     ],
                   ),
                 ),
